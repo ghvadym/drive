@@ -1,21 +1,21 @@
 <?php
-/*
+
 function createPostTypes()
 {
-    createPostType('magazines', [
-        'menu_icon' => 'dashicons-text-page',
+    createPostType('car', [
+        'menu_icon' => 'dashicons-car',
         'labels'    => [
-            'name'          => __('Magazines', 'newspaper'),
-            'singular_name' => __('Magazines', 'newspaper'),
-            'add_new_item'  => __('Add New Magazine', 'newspaper'),
-            'view_item'     => __('View Magazine', 'newspaper'),
-            'search_items'  => __('Search Magazine', 'newspaper'),
+            'name'          => __('Cars', 'newspaper'),
+            'singular_name' => __('Cars', 'newspaper'),
+            'add_new_item'  => __('Add New Car', 'newspaper'),
+            'view_item'     => __('View Car', 'newspaper'),
+            'search_items'  => __('Search Car', 'newspaper'),
             'not_found'     => __('No News found', 'newspaper'),
-            'menu_name'     => __('Magazines', 'newspaper'),
+            'menu_name'     => __('Cars', 'newspaper'),
         ],
     ]);
 
-    createTaxonomy('categories', 'magazines', [
+    createTaxonomy('categories', 'car', [
         'labels' => [
             'singular_name'     => __('Categories', 'newspaper'),
             'search_items'      => __('Search Category', 'newspaper'),
@@ -30,7 +30,7 @@ function createPostTypes()
         ],
     ]);
 }
-*/
+
 
 function createPostType($postType, $args = [])
 {

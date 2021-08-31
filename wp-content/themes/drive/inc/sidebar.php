@@ -1,10 +1,10 @@
 <?php
 
-//add_action('widgets_init', 'custom_sidebar');
-//function custom_sidebar()
-//{
-//    register_my_sidebar('Footer Logo', 'footer-logo');
-//}
+add_action('widgets_init', 'custom_sidebar');
+function custom_sidebar()
+{
+    register_my_sidebar('Footer navigation', 'footer-nav');
+}
 
 function register_my_sidebar($title, $slug)
 {
