@@ -35,36 +35,7 @@ function getBgImage($name) : string
 
 function textLimiter($text, $limit = 40)
 {
-    return strlen($text) > $limit ? substr($text, 0, $limit) . '...' : $text;
-}
+    $plainText = strip_tags($text);
+    return strlen($plainText) > $limit ? mb_strimwidth($plainText, 0, $limit, "...") : $plainText;
 
-function getPosts($args)
-{
-    $posts = get_posts($args);
-    if ($posts) {
-        foreach ($posts as $post) {
-            setup_postdata($post);
-            get_template_part_var('templates/components/recent-posts', ['post' => $post]);
-        }
-    } else {
-        echo '<h3>' . _e('Coming soon', 'newspaper') . '</h3>';
-    }
-    wp_reset_postdata();
-}
-
-function footerWidgets()
-{
-    $widgets = [
-        'footer-logo',
-        'footer-pages',
-        'footer-labels-magazines',
-        'footer-categories-magazines',
-        'footer-labels-newspapers',
-        'footer-categories-newspapers',
-    ];
-    foreach ($widgets as $widget) {
-        if (is_active_sidebar($widget)) {
-            dynamic_sidebar($widget);
-        }
-    }
 }

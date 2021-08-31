@@ -1,15 +1,10 @@
 <?php
 
-add_action('widgets_init', 'custom_sidebar');
-function custom_sidebar()
-{
-    register_my_sidebar('Footer Logo', 'footer-logo');
-    register_my_sidebar('Footer Pages', 'footer-pages');
-    register_my_sidebar('Footer Labels Newspapers', 'footer-labels-magazines');
-    register_my_sidebar('Footer Categories Magazines', 'footer-categories-magazines');
-    register_my_sidebar('Footer Labels Newspapers', 'footer-labels-newspapers');
-    register_my_sidebar('Footer Categories Newspapers', 'footer-categories-newspapers');
-}
+//add_action('widgets_init', 'custom_sidebar');
+//function custom_sidebar()
+//{
+//    register_my_sidebar('Footer Logo', 'footer-logo');
+//}
 
 function register_my_sidebar($title, $slug)
 {
