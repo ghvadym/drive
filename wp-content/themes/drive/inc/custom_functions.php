@@ -24,7 +24,7 @@ function wp_get_current_url()
 
 function getImage($name) : string
 {
-    return get_template_directory_uri() . '/assets/images/' . $name;
+    return get_template_directory_uri() . '/assets/img/' . $name;
 }
 
 function getBgImage($name) : string
@@ -33,7 +33,7 @@ function getBgImage($name) : string
     return 'background-image: url(' . $image . ')';
 }
 
-function textLimiter($text, $limit = 40)
+function textLimiter($text, $limit = 40): string
 {
     $plainText = strip_tags($text);
     return strlen($plainText) > $limit ? mb_strimwidth($plainText, 0, $limit, "...") : $plainText;

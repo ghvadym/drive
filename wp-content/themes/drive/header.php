@@ -9,18 +9,23 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header id="navigation">
-    <div class="nav">
-        <div class="container">
-            <div class="nav__body">
-                <div class="nav__logo">
-                    <a class="logo" href="<?php echo home_url(); ?>"><?php bloginfo('title') ?></a>
-                </div>
-                <div class="nav__menu">
-                    <?php wp_nav_menu(['theme_location' => 'main_header']) ?>
-                </div>
-                <div class="nav__burger"></div>
+<header class="header">
+    <div class="header__row">
+        <div class="header__logo">
+            <a href="<?php echo home_url(); ?>">
+                <img src="<?php echo getImage('logo.svg') ?>" class="logo" alt="logo-header">
+            </a>
+        </div>
+        <div class="header__nav">
+            <div class="nav__title">En del af CarHolding Gruppen</div>
+            <div id="burger" class="nav__burger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+        </div>
+        <div id="menu" class="nav__menu">
+            <?php wp_nav_menu(['theme_location' => 'main_header']) ?>
         </div>
     </div>
 </header>

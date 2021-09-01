@@ -5,7 +5,7 @@ function theme_styles()
 {
     wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('app-style', get_template_directory_uri() . '/assets/css/app.css');
-    wp_enqueue_style('owl-style', get_template_directory_uri() . '/assets/css/owl.carousel.min.css');
+    //wp_enqueue_style('owl-style', get_template_directory_uri() . '/assets/css/owl.carousel.min.css');
 }
 
 add_action('wp_enqueue_scripts', 'theme_scripts');

@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    //Pagination on archive page
-    //var ajax = myajax.ajaxurl;
+    var menu = document.getElementById('menu');
+    var burger = document.getElementById('burger');
+    burger.onclick = () => {
+        menu.classList.toggle('open');
+    }
+
+    window.onclick = (e) => {
+        var menu = document.getElementById('menu');
+        if (!menu.contains(e.target) && !menu.classList.contains('open')) {
+            menu.classList.remove('open');
+        }
+    }
 });
 
 
