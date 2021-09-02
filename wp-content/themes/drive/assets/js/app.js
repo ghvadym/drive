@@ -2,15 +2,23 @@ document.addEventListener('DOMContentLoaded', function () {
     var menu = document.getElementById('menu');
     var burger = document.getElementById('burger');
     burger.onclick = () => {
-        menu.classList.toggle('open');
+        if (!menu.classList.contains('open')) {
+            menu.classList.add('open');
+        }
     }
 
     window.onclick = (e) => {
-        var menu = document.getElementById('menu');
-        if (!menu.contains(e.target) && !menu.classList.contains('open')) {
+        if (!menu.contains(e.target) && !burger.contains(e.target)) {
             menu.classList.remove('open');
         }
     }
+
+    var closeMenu = document.querySelectorAll('.trigger-close');
+    closeMenu.forEach((item) => {
+        item.onclick = () => {
+            menu.classList.remove('open');
+        }
+    });
 });
 
 

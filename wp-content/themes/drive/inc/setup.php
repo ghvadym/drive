@@ -35,14 +35,26 @@ add_action('after_setup_theme', function () {
 
     add_theme_support('post-thumbnails');
 
-    if (function_exists('acf_add_options_page')) {
-        acf_add_options_page([
-            'page_title' => 'Options',
-            'menu_title' => 'Options',
-            'menu_slug'  => 'theme-general-settings',
-            'capability' => 'edit_posts',
-            'redirect'   => false,
-        ]);
+    if( function_exists('acf_add_options_page') ) {
+        acf_add_options_page(array(
+            'page_title' 	=> 'Theme General Settings',
+            'menu_title'	=> 'Theme Settings',
+            'menu_slug' 	=> 'theme-general-settings',
+            'capability'	=> 'edit_posts',
+            'redirect'		=> false
+        ));
+
+        acf_add_options_sub_page(array(
+            'page_title' 	=> 'Header',
+            'menu_title'	=> 'Header',
+            'parent_slug'	=> 'theme-general-settings',
+        ));
+
+        acf_add_options_sub_page(array(
+            'page_title' 	=> 'Footer',
+            'menu_title'	=> 'Footer',
+            'parent_slug'	=> 'theme-general-settings',
+        ));
     }
 
 });

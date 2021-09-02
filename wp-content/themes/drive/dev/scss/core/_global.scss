@@ -11,8 +11,9 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
+    overflow-x: hidden;
     color: $font-light;
-    font-family: 'TW', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
     font-weight: 300;
     font-size: 1.8rem;
     background: rgba(255, 255, 255, 1);
@@ -90,7 +91,7 @@ img {
 .background {
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 
 .logo {
@@ -119,6 +120,10 @@ img {
     @extend .container;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .btn {
     display: inline-block;
     background-color: $color-btn;
@@ -139,7 +144,8 @@ img {
         top: calc(50% - 10px);
         width: 20px;
         height: 20px;
-        background: url('../assets/img/btn-arrow.svg') center / no-repeat contain;
+        background: url('../../assets/img/btn-arrow.svg');
+        @extend .background;
     }
 
     &:hover, &:focus {
