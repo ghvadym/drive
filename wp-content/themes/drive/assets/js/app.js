@@ -19,23 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
             menu.classList.remove('open');
         }
     });
+
+    var imgTop = document.querySelector('.auto-view__info_wrap');
+    setTimeout(() => {
+        imgTop.classList.add('load');
+    }, 1000);
 });
-
-
-// (function ($) {
-//     $(document).ready(function () {
-//         if ($(window).width() < 767) {
-//             $(".terms__list.owl-carousel").owlCarousel({
-//                 loop              : true,
-//                 items             : 1,
-//                 touchDrag         : true,
-//                 margin            : 20,
-//                 nav               : false,
-//                 dots              : false,
-//                 autoplay          : true,
-//                 autoplayHoverPause: true,
-//                 autoplayTimeout   : 2000,
-//             });
-//         }
-//     });
-// })(jQuery);

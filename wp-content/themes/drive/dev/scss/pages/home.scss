@@ -2,6 +2,7 @@
   min-height: calc(100vh - 50px);
   @extend .bg-cover;
   padding: 120px 0;
+  position: relative;
 }
 
 .intro__top_logo {
@@ -12,6 +13,42 @@
   img {
     @extend .contain;
   }
+}
+
+.auto-view__info_wrap {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -130px;
+    right: 70px;
+    width: 61px;
+    height: 184px;
+    background-image: url('../../assets/img/arrow-big-top.png');
+    @extend .bg-contain;
+    transform: translateY(40%);
+    opacity: 0;
+    transition: all ease-in-out 1s;
+  }
+
+  &.load {
+    &:after {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.auto-view__image {
+  width: 530px;
+  position: absolute;
+  top: -300px;
+  right: -12px;
+
+   img {
+     object-fit: contain;
+   }
 }
 
 .intro__top_content {
@@ -68,6 +105,7 @@
   width: 100%;
   font-weight: 400;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  position: relative;
 
   @media (min-width: $laptop-portrait) {
     margin-top: -20px;

@@ -78,6 +78,9 @@ function getInfoCar($car)
     ?>
 
     <div class="auto-view__info_wrap">
+        <div class="auto-view__image">
+            <img src="<?php echo get_the_post_thumbnail_url($car); ?>" alt="top-image-car">
+        </div>
         <div class="auto-view__head">
             <div class="auto-view__price_title">
                 <?php _e('Pris', 'drive') ?>
