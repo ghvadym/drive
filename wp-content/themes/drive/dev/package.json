@@ -4,8 +4,7 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp default",
-    "build": "gulp build"
+    "start": "gulp start"
   },
   "browserslist": [
     "last 2 versions"

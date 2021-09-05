@@ -30,10 +30,13 @@ function upload_allow_types($mimes)
 add_action('after_setup_theme', function () {
 
     register_nav_menus([
-        'main_header' => 'Main Header',
+        'main_header'   => 'Main Header',
+        'footer_menu_1' => 'Footer Menu 1',
+        'footer_menu_2' => 'Footer Menu 2',
+        'footer_menu_3' => 'Footer Menu 3',
     ]);
 
-    add_theme_support('post-thumbnails');
+    add_theme_support('post-thumbnails', ['car']);
 
     if( function_exists('acf_add_options_page') ) {
         acf_add_options_page(array(
@@ -58,6 +61,11 @@ add_action('after_setup_theme', function () {
     }
 
 });
+
+add_action('init', 'my_remove_editor_from_post_type');
+function my_remove_editor_from_post_type() {
+    remove_post_type_support( 'page', 'editor' );
+}
 
 add_action('admin_menu', 'remove_default_post_types');
 function remove_default_post_types()

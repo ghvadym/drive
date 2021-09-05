@@ -12,7 +12,7 @@ body {
     margin: 0;
     min-height: 100vh;
     overflow-x: hidden;
-    color: $font-light;
+    color: $font-dark;
     font-family: 'Titillium Web', sans-serif;
     font-weight: 300;
     font-size: 1.8rem;
@@ -21,12 +21,19 @@ body {
     flex-direction: column;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
 a {
     text-decoration: none;
     color: $font-light;
+    transition: color ease-in-out 0.2s;
 
     &:hover, &:focus {
         text-decoration: none;
+        color: rgba(255, 255, 255, 0.7);
     }
 }
 
@@ -91,11 +98,20 @@ img {
 .background {
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.bg-contain {
+    @extend .background;
     background-size: contain;
 }
 
+.bg-cover {
+    @extend .background;
+    background-size: cover;
+}
+
 .logo {
-    @extend .cover;
+    @extend .contain;
 }
 
 @media (max-width: $laptop-portrait) {
@@ -108,7 +124,7 @@ img {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 30px;
 }
 
 .section {
@@ -117,7 +133,6 @@ img {
 
 .main {
     flex-grow: 1;
-    @extend .container;
 }
 
 .pointer {
@@ -128,19 +143,30 @@ img {
     display: inline-block;
     background-color: $color-btn;
     color: $font-light;
-    font-family: "TW", sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     min-width: 216px;
     text-align: center;
-    padding: 15px 45px 15px 20px;
+    padding: 10px;
     position: relative;
     border: none;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.2s;
+
+    &:hover, &:focus {
+        outline: none;
+        text-decoration: none;
+        color: $font-light;
+    }
+}
+
+.btn-arrow {
+    padding: 10px 35px 10px 10px;
 
     &:before {
         content: '';
         position: absolute;
-        right: 10px;
+        right: 15px;
         top: calc(50% - 10px);
         width: 20px;
         height: 20px;
@@ -149,8 +175,7 @@ img {
     }
 
     &:hover, &:focus {
-        outline: none;
-        text-decoration: none;
+        background-color: $color-btn-hover;
     }
 }
 

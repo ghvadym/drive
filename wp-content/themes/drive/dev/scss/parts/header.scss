@@ -1,6 +1,5 @@
 .header {
-    background-color: rgba(51, 51, 51, 1);
-    backdrop-filter: blur(4px);
+    background-color: $background-dark;
     padding: 0 45px;
 }
 
@@ -13,6 +12,7 @@
 .header__logo {
     max-width: 210px;
     width: 100%;
+    margin-left: -11px;
 }
 
 .header__nav {
@@ -32,6 +32,8 @@
     background-color: $color-main;
     transition: right ease-in-out 0.5s;
     text-align: right;
+    z-index: 10;
+    overflow-y: auto;
 
     &.open {
         right: 0;
@@ -58,6 +60,7 @@
 .menu__desc {
     padding: 40px;
     line-height: 3rem;
+    color: $color-white;
     @extend .line-down;
 }
 
@@ -118,12 +121,13 @@
     top: 40px;
     right: 40px;
     z-index: 10;
-    @extend .background;
+    @extend .bg-contain;
 }
 
 .nav__luk {
     margin: 40px;
     transition: color ease-in-out 0.2s;
+    color: $color-white;
 
     &:hover {
         color: rgba(255, 255, 255, 0.7);

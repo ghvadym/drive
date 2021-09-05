@@ -1,0 +1,60 @@
+.footer {
+  background-color: $background-dark;
+  padding: 100px 0 200px;
+}
+
+.footer__logo {
+    max-width: 340px;
+    width: 100%;
+    display: block;
+    margin-left: -13px;
+}
+
+.footer__title {
+    color: $font-light;
+}
+
+.footer-column {
+    .menu-item a {
+        margin: 10px 0;
+        font-size: 1.8rem;
+        display: inline-block;
+        padding-right: 20px;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 5px);
+            right: -2px;
+            width: 14px;
+            height: 14px;
+            background: url('../../assets/img/arrow-right.svg');
+            @extend .bg-contain;
+        }
+    }
+}
+
+.footer-column {
+    margin: 10px 0;
+}
+
+.footer__social_row {
+    @extend .d-f;
+    gap: 10px;
+    color: $color-white;
+}
+
+.social__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $color-main;
+    @extend .d-f-center;
+
+    img {
+        width: 15px;
+        height: 30px;
+        @extend .cover;
+    }
+}

@@ -26,4 +26,4 @@ function watcher()
     watch(WATCH, scss);
 }
 
-exports.default = series(scss, watcher);
+exports.start = series(scss, watcher);
