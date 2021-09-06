@@ -51,6 +51,14 @@
    }
 }
 
+.auto-view__btn {
+  padding: 20px;
+
+  .btn {
+    width: 100%;
+  }
+}
+
 .intro__top_content {
   margin-bottom: 30px;
   color: $color-white;

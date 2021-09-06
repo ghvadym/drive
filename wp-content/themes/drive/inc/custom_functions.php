@@ -67,13 +67,12 @@ function getInfoCar($car)
 {
     $fields = get_fields($car->ID);
     $fieldNames = [
-        'car_price',
-        'car_door',
-        'car_seats',
-        'car_kml',
-        'car_hk',
-        'car_trans',
-        'car_fuel'
+        'car_door'  => ' døre',
+        'car_seats' => ' personers',
+        'car_kml'   => ' km/l',
+        'car_hk'    => ' hk',
+        'car_trans' => '',
+        'car_fuel'  => '',
     ];
     ?>
 
@@ -94,18 +93,36 @@ function getInfoCar($car)
         </div>
 
         <ul class="auto-view__list">
-            <?php
-            foreach($fieldNames as $field):
-                if($fields[$field]): ?>
+            <?php foreach($fieldNames as $key => $val):
+                if($fields[$key]): ?>
                     <li class="list-item">
-                        <?php echo $fields[$field] ?>
+                        <?php echo $fields[$key] . $val ?? '' ?>
                     </li>
                 <?php endif; ?>
-            <?php
-            endforeach; ?>
+            <?php endforeach; ?>
         </ul>
-
+        <div class="auto-view__btn">
+            <a href="<?php echo get_post_permalink($car->ID) ?>" class="btn">
+                <?php _e('Bestil nu', 'GMK') ?>
+            </a>
+        </div>
     </div>
 
     <?php
+}
+
+function getCarsCategories()
+{
+    $args = [
+        'post_type'      => 'car',
+        'post_status'    => 'publish',
+        'posts_per_page' => 4
+    ];
+    $posts = get_posts($args);
+    if($posts):
+        foreach($posts as $post): setup_postdata($post);
+            get_template_part_var('pages/parts/card-category', ['post' => $post]);
+        endforeach;
+    endif;
+    wp_reset_postdata();
 }

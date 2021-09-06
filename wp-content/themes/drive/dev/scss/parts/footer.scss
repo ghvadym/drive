@@ -41,6 +41,7 @@
 
 .footer__social_row {
     @extend .d-f;
+    justify-content: flex-end;
     gap: 10px;
     color: $color-white;
 }

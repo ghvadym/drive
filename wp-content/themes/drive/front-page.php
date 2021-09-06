@@ -38,5 +38,7 @@ $getCar = get_field('car_for_banner');
     </div>
 </section>
 
+<?php getCarsCategories() ?>
+
 <?php
 get_footer();
