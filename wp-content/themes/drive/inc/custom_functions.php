@@ -22,12 +22,12 @@ function wp_get_current_url()
     return home_url($_SERVER['REQUEST_URI']);
 }
 
-function getImage($name) : string
+function getImage($name): string
 {
     return get_template_directory_uri() . '/assets/img/' . $name;
 }
 
-function getBgImage($name) : string
+function getBgImage($name): string
 {
     $image = getImage($name);
     return 'background-image: url(' . $image . ')';
@@ -40,7 +40,7 @@ function getAcfImage($field): string
 
 function getAcfBtn($field, $class)
 {
-    return '<a class="'. $class .'" href="'. $field['url'] .'" target="'. $field['target'] .'">'. $field['title'] .'</a>';
+    return '<a class="' . $class . '" href="' . $field['url'] . '" target="' . $field['target'] . '">' . $field['title'] . '</a>';
 }
 
 function textLimiter($text, $limit = 40): string
@@ -93,8 +93,8 @@ function getInfoCar($car)
         </div>
 
         <ul class="auto-view__list">
-            <?php foreach($fieldNames as $key => $val):
-                if($fields[$key]): ?>
+            <?php foreach ($fieldNames as $key => $val):
+                if ($fields[$key]): ?>
                     <li class="list-item">
                         <?php echo $fields[$key] . $val ?? '' ?>
                     </li>
@@ -116,13 +116,22 @@ function getCarsCategories()
     $args = [
         'post_type'      => 'car',
         'post_status'    => 'publish',
-        'posts_per_page' => 4
+        'posts_per_page' => 4,
     ];
     $posts = get_posts($args);
-    if($posts):
-        foreach($posts as $post): setup_postdata($post);
-            get_template_part_var('pages/parts/card-category', ['post' => $post]);
-        endforeach;
-    endif;
+    if ($posts): ?>
+        <div class="categories">
+            <div class="container">
+                <div class="categories__wrap">
+                    <div class="categories__list">
+                        <?php
+                        foreach ($posts as $post): setup_postdata($post);
+                            get_template_part_var('pages/parts/card-category', ['post' => $post]);
+                        endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif;
     wp_reset_postdata();
 }
