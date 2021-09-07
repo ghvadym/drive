@@ -23,7 +23,7 @@ $term = get_the_terms($post, 'categories')[0];
             <?php echo textLimiter($post->post_content) ?>
         </div>
         <div class="category__btn">
-            <a href="/vaelg-en-bil/ ">
+            <a href="/vaelg-en-bil/" class="btn">
                 <?php _e('Se kategorien her', 'drive') ?>
             </a>
         </div>
