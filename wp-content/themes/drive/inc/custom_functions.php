@@ -117,6 +117,9 @@ function getCarsCategories()
         'post_type'      => 'car',
         'post_status'    => 'publish',
         'posts_per_page' => 4,
+        'meta_key'       => 'car_widget',
+        'orderby'        => 'menu_order',
+        'order'          => 'desc',
     ];
     $posts = get_posts($args);
     if ($posts): ?>
@@ -125,8 +128,10 @@ function getCarsCategories()
                 <div class="categories__wrap">
                     <div class="categories__list">
                         <?php
+                        $iteration = 1;
                         foreach ($posts as $post): setup_postdata($post);
-                            get_template_part_var('pages/parts/card-category', ['post' => $post]);
+                            get_template_part_var('pages/parts/card-category', ['post' => $post, 'iteration' => $iteration]);
+                            $iteration++;
                         endforeach; ?>
                     </div>
                 </div>

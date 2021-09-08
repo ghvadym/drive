@@ -4,6 +4,7 @@ function createPostTypes()
 {
     createPostType('car', [
         'menu_icon' => 'dashicons-car',
+        'supports'  => array('title', 'editor', 'thumbnail', 'excerpt', 'page-attributes'),
         'labels'    => [
             'name'          => __('Cars', 'newspaper'),
             'singular_name' => __('Cars', 'newspaper'),

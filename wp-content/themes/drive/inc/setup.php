@@ -59,12 +59,13 @@ add_action('after_setup_theme', function () {
             'parent_slug'	=> 'theme-general-settings',
         ));
     }
-
 });
 
 add_action('init', 'my_remove_editor_from_post_type');
 function my_remove_editor_from_post_type() {
-    remove_post_type_support( 'page', 'editor' );
+    remove_post_type_support( 'page', 'editor');
+    add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
+    add_filter( 'use_widgets_block_editor', '__return_false' );
 }
 
 add_action('admin_menu', 'remove_default_post_types');
@@ -77,8 +78,5 @@ function remove_default_post_types()
 add_action('the_content', 'wrap_content_div');
 function wrap_content_div($content)
 {
-    return '<div class="article__content">' . $content . '</div>';
+    return '<div class="article-content">' . $content . '</div>';
 }
-
-add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
-add_filter( 'use_widgets_block_editor', '__return_false' );

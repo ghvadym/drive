@@ -38,15 +38,7 @@ $getCar = get_field('car_for_banner');
     </div>
 </section>
 
-<div class="categories">
-    <div class="container">
-        <div class="categories__wrap">
-            <div class="categories__list">
-                <?php getCarsCategories() ?>
-            </div>
-        </div>
-    </div>
-</div>
+<?php getCarsCategories() ?>
 
 <?php
 get_footer();
