@@ -32,13 +32,41 @@ $getCar = get_field('car_for_banner');
                 <?php echo $fields['home_intro_desc'] ?>
             </div>
             <div class="auto-view__info">
-                <?php getInfoCar($getCar) ?>
+                <?php get_template_part_var('pages/parts/card-view', ['car' => $getCar]) ?>
             </div>
         </div>
     </div>
 </section>
 
 <?php getCarsCategories() ?>
+
+<?php get_template_part('pages/parts/cta-section'); ?>
+
+<div class="section">
+    <div class="container">
+        <div class="most-pop">
+            <div class="most-pop__title title">
+                <?php
+                $args = [
+                    'post_type'      => 'car',
+                    'post_status'    => 'publish',
+                    'meta_key'       => 'car_most_popular',
+                    'orderby'        => 'menu_order',
+                    'order'          => 'desc',
+                ];
+                $posts = get_posts($args); ?>
+
+                <?php if($posts): ?>
+                    <div class="most-pop__list">
+                        <?php foreach($posts as $post): ?>
+                            <?php get_template_part_var('pages/parts/card-view', ['car' => $post]) ?>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php
 get_footer();

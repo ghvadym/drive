@@ -1,0 +1,18 @@
+.cta__wrap {
+  @extend .d-f-column;
+  padding: 80px 0;
+  color: $font-light;
+}
+
+.cta__btn {
+  max-width: 245px;
+  width: 100%;
+}
+
+.cta__title {
+  margin-bottom: 10px;
+}
+
+.cta__subtitle {
+  margin-bottom: 20px;
+}

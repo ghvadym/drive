@@ -59,9 +59,9 @@ button, {
 
 h1,
 h2,
-h3 {
+h3,
+.bold {
     font-weight: 600;
-    padding: 0 0 30px;
 }
 
 h1 {
@@ -77,8 +77,8 @@ h3 {
     font-size: 2rem;
 }
 
-.bold {
-    font-weight: 600;
+.title {
+    @extend h2;
 }
 
 img {
@@ -157,6 +157,7 @@ img {
         outline: none;
         text-decoration: none;
         color: $font-light;
+        background-color: $color-btn-hover;
     }
 }
 
@@ -172,10 +173,6 @@ img {
         height: 20px;
         background: url('../../assets/img/btn-arrow.svg');
         @extend .background;
-    }
-
-    &:hover, &:focus {
-        background-color: $color-btn-hover;
     }
 }
 
@@ -200,15 +197,19 @@ img {
     overflow: hidden;
 }
 
-.d-f-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .d-f {
     display: flex;
     align-items: center;
+}
+
+.d-f-center {
+    @extend .d-f;
+    justify-content: center;
+}
+
+.d-f-column {
+    @extend .d-f;
+    flex-direction: column;
 }
 
 .row {
