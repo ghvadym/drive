@@ -61,6 +61,7 @@ h1,
 h2,
 h3,
 .bold {
+    margin: 0 0 15px;
     font-weight: 600;
 }
 
@@ -129,6 +130,7 @@ img {
 
 .section {
     padding: 100px 0;
+    position: relative;
 }
 
 .main {

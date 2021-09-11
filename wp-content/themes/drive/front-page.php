@@ -5,7 +5,6 @@
 get_header();
 $fields = get_fields();
 $fieldsOpt = get_fields('options');
-$getCar = get_field('car_for_banner');
 ?>
 
 <section class="home__intro" style="<?php echo getAcfImage($fields['home_intro_bg']) ?>">
@@ -18,13 +17,34 @@ $getCar = get_field('car_for_banner');
                 <div class="intro__top_content">
                     <?php echo $fields['home_intro_content'] ?>
                 </div>
+                <div class="intro__top_content_mobile">
+                    <?php echo $fields['home_intro_content_mob'] ?>
+                </div>
                 <div class="intro__top_btn">
                     <?php echo getAcfBtn($fields['home_intro_button'], 'intro__btn btn btn-arrow') ?>
                 </div>
             </div>
         </div>
     </div>
+    <div class="intro__social">
+        <div class="social__title">
+            <?php echo $fieldsOpt['social_title'] ?>
+        </div>
+        <div class="social__sep"></div>
+        <?php if($fieldsOpt['social_list']): ?>
+            <div class="social__list">
+                <?php foreach($fieldsOpt['social_list'] as $item): ?>
+                    <a href="<?php echo $item['link'] ?>"
+                       class="social__item"
+                       target="_blank">
+                        <img src="<?php echo $item['img'] ?>" alt="social">
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif ?>
+    </div>
 </section>
+
 <section class="home__auto-view">
     <div class="container">
         <div class="auto-view__wrap">
@@ -32,41 +52,36 @@ $getCar = get_field('car_for_banner');
                 <?php echo $fields['home_intro_desc'] ?>
             </div>
             <div class="auto-view__info">
-                <?php get_template_part_var('pages/parts/card-view', ['car' => $getCar]) ?>
+                <?php get_template_part_var('pages/parts/card-view', ['car' => $fields['car_for_banner']]) ?>
             </div>
         </div>
     </div>
 </section>
 
-<?php getCarsCategories() ?>
-
+<?php get_template_part('pages/parts/output-categories'); ?>
 <?php get_template_part('pages/parts/cta-section'); ?>
+<?php get_template_part('pages/parts/output-most-popular'); ?>
+<?php get_template_part('pages/parts/how-work'); ?>
 
-<div class="section">
+<section class="why-dy section">
     <div class="container">
-        <div class="most-pop">
-            <div class="most-pop__title title">
-                <?php
-                $args = [
-                    'post_type'      => 'car',
-                    'post_status'    => 'publish',
-                    'meta_key'       => 'car_most_popular',
-                    'orderby'        => 'menu_order',
-                    'order'          => 'desc',
-                ];
-                $posts = get_posts($args); ?>
-
-                <?php if($posts): ?>
-                    <div class="most-pop__list">
-                        <?php foreach($posts as $post): ?>
-                            <?php get_template_part_var('pages/parts/card-view', ['car' => $post]) ?>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
+        <div class="why-dy__content">
+            <h2 class="why-dy__title">
+                <?php echo $fields['home_why_dy_title'] ?>
+            </h2>
+            <div class="why-dy__desc">
+                <?php echo $fields['home_why_dy_text'] ?>
+            </div>
+            <div class="why-dy__btn">
+                <?php echo getAcfBtn($fields['home_why_dy_btn'], 'btn'); ?>
             </div>
         </div>
+        <div class="why-dy__img">
+            <img src="<?php echo $fields['home_why_dy_img'] ?>"
+                 alt="<?php echo $fields['home_why_dy_title'] ?>">
+        </div>
     </div>
-</div>
+</section>
 
 <?php
 get_footer();

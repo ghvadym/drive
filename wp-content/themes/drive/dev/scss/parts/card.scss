@@ -20,19 +20,27 @@
 
 .categories__list {
   @extend .d-f;
-  column-gap: 20px;
-  row-gap: 40px;
+  gap: 20px;
   padding: 20px 2px;
   width: 1140px;
   margin: 30px 0;
 }
 
-.category__item {
+.card-item {
   position: relative;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-  padding: 20px;
   font-weight: 400;
   font-size: 1.4rem;
+}
+
+.most-pop .auto-view__info_wrap {
+  @extend .card-item;
+}
+
+.category__item {
+  @extend .card-item;
+
+  padding: 20px;
   max-width: calc(100% / 4 - 15px);
   min-width: 250px;
 
@@ -48,17 +56,30 @@
   }
 }
 
-.category__numb {
+.category__top {
   position: absolute;
   top: -30px;
   height: 30px;
   line-height: 30px;
   left: 0;
-  background-color: $background-dark;
-  padding: 0 10px;
   color: $font-light;
   font-size: 1.5rem;
   font-weight: 600;
+  width: 100%;
+  @extend .d-f;
+
+  & > div {
+    padding: 0 10px;
+  }
+
+  .top__numb {
+    background-color: $background-dark;
+    flex: 0 0 88px;
+  }
+  .top__popular {
+    background-color: $color-main;
+    flex: 0 1 100%;
+  }
 }
 
 .category__title {
@@ -105,4 +126,24 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 10px;
+}
+
+.most-pop__list {
+  @extend .d-f;
+  gap: 30px;
+}
+
+.most-pop .auto-view__image {
+  max-width: 60%;
+  height: 125px;
+  margin: 25px auto 0 auto;
+
+  img {
+    @extend .contain;
+  }
+}
+
+.most-pop .auto-view__info_wrap {
+  max-width: calc(100% - 30px);
+  width: 100%;
 }

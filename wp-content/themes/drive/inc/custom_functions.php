@@ -63,47 +63,16 @@ function footerWidgets()
     }
 }
 
-function getInfoCar($car)
-{
-
-}
-
-function getCarsCategories()
+function getCars($key, $count = -1): array
 {
     $args = [
         'post_type'      => 'car',
         'post_status'    => 'publish',
-        'meta_key'       => 'car_widget',
+        'posts_per_page' => $count,
+        'meta_key'       => $key,
+        'meta_value'     => 1,
         'orderby'        => 'menu_order',
         'order'          => 'desc',
     ];
-    $posts = get_posts($args);
-    if ($posts): ?>
-        <div class="categories">
-            <div class="container">
-                <div class="categories__wrap">
-                    <div class="categories__title">
-                        <div class="title__part">
-                            <?php _e('Vælg imellem', 'drive') ?>
-                        </div>
-                        <div class="title__part">
-                            <?php echo count($posts) ?>
-                        </div>
-                        <div class="title__part">
-                            <?php _e('kategorier', 'drive') ?>
-                        </div>
-                    </div>
-                    <div class="categories__list">
-                        <?php
-                        $iteration = 1;
-                        foreach ($posts as $post): setup_postdata($post);
-                            get_template_part_var('pages/parts/card-category', ['post' => $post, 'iteration' => $iteration]);
-                            $iteration++;
-                        endforeach; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php endif;
-    wp_reset_postdata();
+    return get_posts($args);
 }

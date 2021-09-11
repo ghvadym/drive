@@ -28,12 +28,10 @@ $fieldNames = [
     </div>
 
     <ul class="auto-view__list">
-        <?php foreach ($fieldNames as $key => $val):
-            if ($fields[$key]): ?>
-                <li class="list-item">
-                    <?php echo $fields[$key] . $val ?? '' ?>
-                </li>
-            <?php endif; ?>
+        <?php foreach ($fieldNames as $key => $val): ?>
+            <li class="list-item">
+                <?php echo $fields[$key] ? $fields[$key] . $val : '-' ?>
+            </li>
         <?php endforeach; ?>
     </ul>
     <div class="auto-view__btn">

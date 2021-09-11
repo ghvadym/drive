@@ -3,7 +3,16 @@ $fields = get_fields($post->ID);
 $term = get_the_terms($post, 'categories')[0];
 ?>
 <div class="category__item">
-    <div class="category__numb"><?php echo __('Kategori', 'GMK') . ' ' . $iteration; ?></div>
+    <div class="category__top">
+        <div class="top__numb">
+            <?php echo __('Kategori', 'GMK') . ' ' . $iteration; ?>
+        </div>
+        <?php if(!empty($fields['car_most_popular'])): ?>
+            <div class="top__popular">
+                <?php _e('Mest populære', 'drive'); ?>
+            </div>
+        <?php endif; ?>
+    </div>
     <div class="category__head">
         <div class="category__title">
             <?php echo $term->name ?>
@@ -28,7 +37,7 @@ $term = get_the_terms($post, 'categories')[0];
             <?php echo textLimiter($post->post_excerpt, 120) ?>
         </div>
         <div class="category__btn">
-            <a href="/vaelg-en-bil/" class="btn">
+            <a href="/vaelg-en-bil/" class="btn btn-arrow">
                 <?php _e('Se kategorien her', 'drive') ?>
             </a>
         </div>
