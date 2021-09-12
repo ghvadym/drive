@@ -1,3 +1,7 @@
+.cta {
+  @extend .bg-cover;
+}
+
 .cta__wrap {
   @extend .d-f-column;
   padding: 80px 0;

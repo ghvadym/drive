@@ -1,5 +1,8 @@
-<?php wp_footer();
-$fields = get_fields('options')?>
+<?php
+wp_footer();
+$fields = get_fields('options');
+?>
+
 </main>
 
 <footer class="footer">
@@ -14,24 +17,10 @@ $fields = get_fields('options')?>
                         <?php echo $fields['site_title']; ?>
                     </div>
                 </div>
-                <?php footerWidgets() ?>
-                <div class="footer-column col-md-4 col-lg-3">
-                    <?php if(!empty($fields['footer_social_links'])): ?>
-                        <div class="footer__social">
-                            <?php foreach($fields['footer_social_links'] as $item): ?>
-                                <div class="footer__social_row">
-                                    <div class="social__title">
-                                        <?php echo $item['title'] ?>
-                                    </div>
-                                    <div class="social__img">
-                                        <img src="<?php echo $item['img'] ?>"
-                                             alt="<?php echo $item['title'] ?>">
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
+                <?php
+                footerWidgets();
+                get_template_part('pages/parts/footer-social');
+                ?>
             </div>
         </div>
     </div>

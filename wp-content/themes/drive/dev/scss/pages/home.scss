@@ -1,8 +1,14 @@
 .home__intro {
   min-height: calc(100vh - 50px);
   @extend .bg-cover;
-  padding: 120px 0;
+  padding: 120px 0 0;
   position: relative;
+  @extend .d-f;
+  flex-direction: column;
+
+  .container {
+    flex: 1 1 100%;
+  }
 }
 
 .intro__top_logo {
@@ -49,6 +55,12 @@
    img {
      object-fit: contain;
    }
+
+  @media (max-width: $laptop-portrait - 1) {
+    max-width: 90%;
+    width: auto;
+    top: -240px;
+  }
 }
 
 .auto-view__btn {
@@ -120,7 +132,7 @@
 .social__item {
   margin: 0 5px;
   width: 16px;
-  height: 16px;
+  height: 20px;
 
   img {
     @extend .contain;
@@ -131,42 +143,72 @@
   width: 100px;
   height: 1px;
   background-color: $color-white;
-  margin: 0 10px;
+  margin: 0 0 0 10px;
+}
+
+.intro__arrow {
+  width: 60px;
+  height: 60px;
+  @extend .d-f-center;
+  background-color: $color-main;
+  border-radius: 50%;
+  position: absolute;
+  left: 30px;
+  bottom: -30px;
+  z-index: 1;
+
+  img {
+    width: 20px;
+    height: 20px;
+    transform: rotate(90deg);
+  }
 }
 
 .home__auto-view {
-  background: linear-gradient(to right, #333 75%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+  @media (min-width: $laptop-portrait) {
+    background: linear-gradient(to right, rgba(51, 51, 51, 1) 75%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+  }
 }
 
 .auto-view__desc {
-  padding: 80px 80px 80px 0;
-  max-width: calc(100% - 285px);
   color: $color-white;
 
   h2 {
     margin: 0 0 30px;
     padding: 0;
   }
+
+  @media (min-width: $laptop-portrait) {
+    padding: 80px 80px 80px 0;
+    max-width: calc(100% - 285px);
+  }
+
+  @media (max-width: $laptop-portrait - 1) {
+      background-color: $background-dark;
+      margin: 0 -30px;
+      padding: 60px 20px 80px;
+  }
 }
 
 .auto-view__wrap {
-  display: flex;
   position: relative;
-  margin-bottom: 50px;
 }
 
 .auto-view__info {
   background-color: $color-white;
-  max-width: 285px;
   width: 100%;
   font-weight: 400;
-  box-shadow: $box-shadow-card;
-  position: absolute;
-  top: -20px;
-  right: 0;
 
   @media (min-width: $laptop-portrait) {
     margin-top: -20px;
+    max-width: 285px;
+    position: absolute;
+    top: -20px;
+    right: 0;
+  }
+
+  @media (max-width: $laptop-portrait - 1) {
+    padding: 60px 0;
   }
 }
 

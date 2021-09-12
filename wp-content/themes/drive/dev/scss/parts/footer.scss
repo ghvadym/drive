@@ -39,11 +39,14 @@
     margin: 10px 0;
 }
 
-.footer__social_row {
+.footer__social {
     @extend .d-f;
-    justify-content: flex-end;
     gap: 10px;
     color: $color-white;
+
+    @media (min-width: 1200px) {
+        justify-content: flex-end;
+    }
 }
 
 .social__img {
@@ -51,7 +54,12 @@
     height: 50px;
     border-radius: 50%;
     background-color: $color-main;
+    transition: all ease-in-out 0.2s;
     @extend .d-f-center;
+
+    &:hover {
+        background-color: $color-btn-hover;
+    }
 
     img {
         width: 15px;

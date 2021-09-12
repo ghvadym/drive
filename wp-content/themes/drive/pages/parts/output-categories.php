@@ -16,7 +16,7 @@ if ($posts): ?>
                         <?php _e('kategorier', 'drive') ?>
                     </div>
                 </div>
-                <div class="categories__list">
+                <div class="categories__list owl-carousel">
                     <?php
                     $iteration = 1;
                     foreach ($posts as $post): setup_postdata($post);
