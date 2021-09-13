@@ -25,9 +25,6 @@ $fieldsOpt = get_fields('options');
                 </div>
             </div>
         </div>
-        <div class="intro__arrow">
-            <img src="<?php echo getImage('arrow-right-white.svg'); ?>" alt="arrow-down">
-        </div>
     </div>
     <div class="intro__social">
         <div class="social__title">
@@ -56,6 +53,9 @@ $fieldsOpt = get_fields('options');
             </div>
             <div class="auto-view__desc">
                 <?php echo $fields['home_intro_desc'] ?>
+                <div class="intro__arrow">
+                    <img src="<?php echo getImage('arrow-right-white.svg'); ?>" alt="arrow-down">
+                </div>
             </div>
         </div>
     </div>

@@ -141,6 +141,7 @@
 
 .most-pop .auto-view__info_wrap {
   min-width: 360px;
+  max-width: 360px;
   width: 100%;
   padding-top: 30px;
 }
@@ -149,8 +150,10 @@
   box-shadow: $box-shadow-card;
   transition: box-shadow ease-in-out 0.2s;
 
-  &:hover {
-    box-shadow: $box-shadow-card-hover;
+  @media (max-width: $laptop-landscape + 1) {
+    &:hover {
+      box-shadow: $box-shadow-card-hover;
+    }
   }
 }
 

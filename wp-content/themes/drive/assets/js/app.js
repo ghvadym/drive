@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 (function($){
     $(document).ready(function() {
+        $('.intro__arrow').on('click', () => {
+            $('html, body').animate({
+                scrollTop: $('#categories').offset().top},
+                'slow');
+        });
+
         owlInit('.categories__list.owl-carousel', 4)
         owlInit('.most-pop__list.owl-carousel', 3)
 
@@ -39,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 autoplay: false,
                 loop: false,
                 items: 1,
-                margin: 20,
+                margin: 10,
                 touchDrag: true,
                 autoWidth: true,
                 responsive: {
@@ -47,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         items: items,
                         mouseDrag: true,
                         touchDrag: false,
+                        margin: 20,
                     }
                 }
             });

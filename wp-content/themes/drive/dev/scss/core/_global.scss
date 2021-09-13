@@ -19,6 +19,10 @@ body {
     background: rgba(255, 255, 255, 1);
     display: flex;
     flex-direction: column;
+
+    @media (max-width: $laptop-portrait - 1) {
+        font-size: 1.6rem;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -71,7 +75,7 @@ h1 {
 }
 
 h2 {
-    font-size: 3.6rem;
+    font-size: 2.4rem;
 }
 
 h3 {
@@ -126,7 +130,10 @@ img {
     width: 100%;
     margin: 0 auto;
     padding: 0 30px;
-    position: relative;
+
+    @media (max-width: $laptop-portrait - 1) {
+        padding: 0 20px;
+    }
 }
 
 .section {

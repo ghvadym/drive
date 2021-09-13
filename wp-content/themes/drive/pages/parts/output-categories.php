@@ -2,7 +2,7 @@
 
 $posts = getCars('car_widget');
 if ($posts): ?>
-    <section class="categories">
+    <section class="categories" id="categories">
         <div class="container">
             <div class="categories__wrap">
                 <div class="categories__title">

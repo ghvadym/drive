@@ -1,18 +1,31 @@
 .header {
     background-color: $background-dark;
     padding: 0 45px;
+
+    @media (max-width: $laptop-portrait - 1) {
+        padding: 0 20px;
+    }
 }
 
 .header__row {
     @extend .d-f;
     justify-content: space-between;
     padding: 25px 0;
+
+    @media (max-width: $laptop-portrait - 1) {
+        padding: 15px 0;
+    }
 }
 
 .header__logo {
     max-width: 210px;
     width: 100%;
     margin-left: -11px;
+
+    @media (max-width: $laptop-portrait - 1) {
+        max-width: 150px;
+        height: 23px;
+    }
 }
 
 .header__nav {
@@ -37,6 +50,16 @@
 
     &.open {
         right: 0;
+    }
+
+    @media (max-width: $laptop-portrait - 1) {
+        max-width: 100%;
+    }
+}
+
+.nav__title {
+    @media (max-width: $laptop-portrait - 1) {
+        display: none;
     }
 }
 
