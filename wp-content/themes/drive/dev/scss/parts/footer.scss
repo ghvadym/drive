@@ -1,6 +1,14 @@
 .footer {
-  background-color: $background-dark;
-  padding: 100px 0 200px;
+    background-color: $background-dark;
+    padding: 100px 0 200px;
+
+    @media (max-width: $laptop-portrait - 1) {
+        padding: 50px 0 100px;
+
+        .social__title {
+            font-size: 1.8rem;
+        }
+    }
 }
 
 .footer__logo {
@@ -8,13 +16,23 @@
     width: 100%;
     display: block;
     margin-left: -13px;
+
+    @media (max-width: $laptop-portrait - 1) {
+        max-width: 220px;
+    }
 }
 
 .footer__title {
     color: $font-light;
+
+    @media (max-width: $laptop-portrait - 1) {
+        display: none;
+    }
 }
 
 .footer-column {
+    margin: 10px 0;
+
     .menu-item a {
         margin: 10px 0;
         font-size: 1.8rem;
@@ -33,10 +51,14 @@
             @extend .bg-contain;
         }
     }
-}
 
-.footer-column {
-    margin: 10px 0;
+    @media (max-width: $laptop-portrait - 1) {
+        margin: 5px 0;
+
+        &:first-child {
+            margin-bottom: 50px;
+        }
+    }
 }
 
 .footer__social {
@@ -67,3 +89,5 @@
         @extend .cover;
     }
 }
+
+

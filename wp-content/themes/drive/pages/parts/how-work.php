@@ -27,7 +27,11 @@ $fields = get_fields('options');
         </div>
         <div class="how-works__col">
             <div class="how-works__image">
-                <img src="<?php echo $fields['how_works_img'] ?>" alt="<?php echo $fields['how_works_title'] ?>">
+                <picture>
+                    <source srcset="<?php echo $fields['how_works_img_mob'] ?>" media="(max-width: 768px)">
+                    <source srcset="<?php echo $fields['how_works_img'] ?>">
+                    <img src="<?php echo $fields['how_works_img'] ?>" alt="My default image">
+                </picture>
             </div>
         </div>
     </div>

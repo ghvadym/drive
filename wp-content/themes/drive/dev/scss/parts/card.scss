@@ -140,17 +140,19 @@
 }
 
 .most-pop .auto-view__info_wrap {
-  min-width: 360px;
-  max-width: 360px;
-  width: 100%;
+  width: 360px;
   padding-top: 30px;
+
+  @media (max-width: $laptop-portrait - 1) {
+      width: 286px;
+  }
 }
 
 .card-shadow {
   box-shadow: $box-shadow-card;
   transition: box-shadow ease-in-out 0.2s;
 
-  @media (max-width: $laptop-landscape + 1) {
+  @media (min-width: $laptop-landscape + 1) {
     &:hover {
       box-shadow: $box-shadow-card-hover;
     }
@@ -159,4 +161,8 @@
 
 .auto-view__info_wrap {
   @extend .card-shadow;
+}
+
+.auto-view__title {
+  @extend .line-break;
 }

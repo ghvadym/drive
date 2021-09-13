@@ -4,16 +4,18 @@
             margin: 0 -10px;
         }
 
-        .owl-stage {
-            padding: 30px 0;
-        }
-
         .owl-stage-outer {
-            padding: 0 3px;
+            padding: 3px;
 
             @media (min-width: $laptop-landscape) {
-                padding: 0 10px;
+                padding: 3px 10px;
             }
+        }
+    }
+
+    &.categories__list {
+        .owl-stage {
+            padding: 30px 0;
         }
     }
 }
