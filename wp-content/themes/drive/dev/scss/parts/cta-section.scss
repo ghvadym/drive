@@ -1,31 +1,31 @@
 .cta {
-  @extend .bg-cover;
+    @extend .bg-cover;
 }
 
 .cta__wrap {
-  @extend .d-f-column;
-  padding: 80px 0;
-  text-align: center;
-  color: $font-light;
+    @extend .d-f-column;
+    padding: 80px 0;
+    text-align: center;
+    color: $font-light;
 }
 
 .cta__btn {
-  .btn {
-      max-width: 245px;
-      width: 100%;
-      @media (max-width: $laptop-portrait - 1) {
-        max-width: 100%;
-      }
-  }
+    .btn {
+        max-width: 245px;
+        width: 100%;
+        @media (max-width: $laptop-portrait - 1) {
+            max-width: 100%;
+        }
+    }
 }
 
 .cta__title {
-  margin-bottom: 10px;
-  font-size: 3.6rem;
-  font-weight: 600;
-  line-height: 1.2;
+    margin-bottom: 10px;
+    font-size: 3.6rem;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 .cta__subtitle {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }

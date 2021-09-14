@@ -1,75 +1,77 @@
 .how-works__row {
-  display: flex;
+    display: flex;
 
-  @media (max-width: $laptop-portrait - 1) {
-      flex-direction: column;
-  }
+    @media (max-width: $laptop-portrait - 1) {
+        flex-direction: column;
+    }
 }
 
 .how-works__col {
-  width: 100%;
+    width: 100%;
 
-  &:first-child {
-    background-color: $color-main;
-  }
+    &:first-child {
+        background-color: $color-main;
+    }
 
-  @media (min-width: $laptop-portrait) {
-     max-width: 50%;
-  }
+    @media (min-width: $laptop-portrait) {
+        max-width: 50%;
+    }
 }
 
 .how-works__content {
-  max-width: 500px;
-  width: 100%;
-  padding: 80px 20px;
-  color: $font-light;
-  margin: 0 auto;
+    max-width: 520px;
+    width: 100%;
+    padding: 80px 20px;
+    color: $font-light;
+    margin: 0 auto;
 }
 
 .how-works__image {
-  height: calc(100% - 40px);
+    height: calc(100% - 40px);
 
-  img {
-    @extend .cover;
-  }
+    img {
+        @extend .cover;
+    }
 }
 
 .how-works__item {
-  @extend .d-f;
-  gap: 20px;
+    @extend .d-f;
+    gap: 20px;
 
-  &:not(:last-of-type) {
-    margin-bottom: 20px;
-  }
-
-  .item-img {
-    width: 80px;
-    height: 80px;
-
-    img {
-      @extend .contain;
+    &:not(:last-of-type) {
+        margin-bottom: 20px;
     }
-  }
 
-  .item-title {
-    @media (max-width: $laptop-portrait - 1) {
+    .item-img {
+        width: 80px;
+        height: 80px;
+
+        img {
+            @extend .contain;
+        }
+    }
+
+    .item-title {
         font-size: 2rem;
-        max-width: 90%;
-    }
-  }
+        line-height: 1.2;
 
-  @media (max-width: $laptop-portrait - 1) {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 0;
-  }
+        @media (max-width: $laptop-portrait - 1) {
+            max-width: 90%;
+        }
+    }
+
+    @media (max-width: $laptop-portrait - 1) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0;
+    }
 }
 
 .how-works__title {
-  margin: 0 0 30px;
+    margin: 0 0 30px;
 
-  @media (max-width: $laptop-portrait - 1) {
-      text-align: center;
-  }
+    @media (max-width: $laptop-portrait - 1) {
+        text-align: center;
+    }
 }
